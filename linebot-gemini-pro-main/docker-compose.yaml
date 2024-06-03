@@ -1,0 +1,16 @@
+services:
+  linebot-gemini-conversation:
+    command:
+      - "/app/main"
+    container_name: "linebot-gemini-pro"
+    environment:
+      - "ChannelAccessToken=YOUR_CHANNEL_ACCESS_TOKEN"
+      - "ChannelSecret=YOUR_CHANNEL_SECRET"
+      - "GOOGLE_GEMINI_API_KEY=YOUR_GOOGLE_GEMINI_API_KEY"
+      - "PORT=3002"
+    image: "linebot-gemini-pro:latest"
+    ports:
+      - "172.17.0.1:3002:3002"
+    restart: "always"
+    working_dir: "/app"
+version: "3.6"
